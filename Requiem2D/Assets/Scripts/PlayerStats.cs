@@ -13,6 +13,7 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Stores information for player upgrades
         moveScript = this.GetComponent<Movement> ();
         scale = moveScript.scale;
         attack = baseAttack * moveScript.scale;

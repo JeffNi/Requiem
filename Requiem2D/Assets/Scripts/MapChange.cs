@@ -16,6 +16,8 @@ public class MapChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Moves the position of the camera based on slider to display
+        //A different map on level select screen
         val = mapSlider.GetComponent<Slider>().value;
         transform.position = new Vector3(transform.position.x, transform.position.y, val*10f);
     }

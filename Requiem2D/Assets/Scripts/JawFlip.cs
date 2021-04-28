@@ -16,6 +16,7 @@ public class JawFlip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Flips the position of the animal's jaws when the animal itself flips
        if (!sprite.flipX) {
            this.GetComponent<BoxCollider2D>().offset = new Vector2(4f, 0f);
        } else {

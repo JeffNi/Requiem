@@ -22,6 +22,7 @@ public class Lighting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Scene gets darker the deeper you go
         depth = shark.transform.position.y;
         sun.GetComponent<Light>().intensity = depth/(maxDepth/1.25f) + 1.25f;
     }

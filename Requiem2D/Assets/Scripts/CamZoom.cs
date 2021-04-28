@@ -13,6 +13,7 @@ public class CamZoom : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Camera zooms based on size of player
         cam = GetComponent<Camera>();
         shark = GameObject.Find("Shark");
         sharkSize = shark.GetComponent<Movement> ().scale;;

@@ -27,9 +27,11 @@ public class AirBar : MonoBehaviour {
     void Update () {
         playerHeight = player.transform.position.y;
         ratio = air / maxAir;
+        //Changes color of bar based on fill amount
         GetComponent<Image> ().fillAmount = ratio;
         barColor = Color.HSVToRGB (0.53f, 1.0f - ratio, 1.0f);
         GetComponent<Image> ().color = barColor;
+        //Fills air when moving, drains when idle or above water
         if (((Input.GetKey (KeyCode.D)) || (Input.GetKey (KeyCode.A)) || (Input.GetKey (KeyCode.S)) || (Input.GetKey (KeyCode.W)) || (gillPump == true)) && playerHeight <= 0) {
             if (air < maxAir) {
                 air++;

@@ -36,6 +36,7 @@ public class vitalBars : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        //Fills bar on GUI, special cases for energy and health
         ratio = value / maxValue;
         GetComponent<Image> ().fillAmount = ratio;
         if (gameObject.tag == "Health") {
@@ -46,6 +47,7 @@ public class vitalBars : MonoBehaviour {
     }
 
     void Health () {
+        //Changes color
         barColor = Color.HSVToRGB (ratio / 2, 1.0f, 1.0f);
         food = script.food;
         air = airScript.air;
@@ -53,6 +55,7 @@ public class vitalBars : MonoBehaviour {
         StartCoroutine (waitTime (1.0f));
     }
     void Energy () {
+        //Energy recovers faster when not starving
         food = script.food;
         if ((Input.GetKey (KeyCode.J)) && (value > 0)) {
             value--;
@@ -67,6 +70,7 @@ public class vitalBars : MonoBehaviour {
         }
     }
     IEnumerator waitTime (float t) {
+        //Gives player invincibility frames after taking non-continuous damage
         if (takingDmg == 1) {
             yield return new WaitForSeconds (t);
             takingDmg = 0;

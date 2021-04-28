@@ -28,6 +28,7 @@ public class SkyColor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Background color depends on depth
         depth = shark.transform.position.y;
         percent = (maxDepth + depth)/maxDepth;
         skyCol = new Color (percent * red, percent * green, percent * blue);

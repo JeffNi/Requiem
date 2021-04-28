@@ -23,6 +23,7 @@ public class PlayerHealth : MonoBehaviour {
     }
 
     void OnTriggerEnter2D (Collider2D other) {
+        //
         if (other.CompareTag ("DamageDealer")) {
             inRange = true;
         }
@@ -30,6 +31,7 @@ public class PlayerHealth : MonoBehaviour {
 
     void OnTriggerStay2D (Collider2D other) {
         if (other.CompareTag ("DamageDealer")) {
+            //Player takes damage
             enemyAnimations = other.gameObject.transform.parent.gameObject.GetComponent<Animations> ();
             enemyScript = other.gameObject.transform.parent.gameObject.GetComponent<BasicPredatorScript> ();
             damage = enemyScript.damage;

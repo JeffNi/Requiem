@@ -11,6 +11,7 @@ public class Camera_Movement : MonoBehaviour {
     }
 
     // Update is called once per frame
+    //Camera follows player
     void Update () {
         transform.position = new Vector3(shark.transform.position.x, shark.transform.position.y, -10.0f);
     }

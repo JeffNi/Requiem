@@ -32,6 +32,8 @@ public class FoodBar : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        //Food drains at certain pace, faster when player is bigger or when energy recharging
+        //And displays on GUI
         energy = script.value;
         GetComponent<Image> ().fillAmount = food / maxFood;
         food = Mathf.Clamp(food, 0, maxFood);

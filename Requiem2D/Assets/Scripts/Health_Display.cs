@@ -24,6 +24,7 @@ public class Health_Display : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Changes bar color based on fill amount and displays health
         ratio = health/maxHealth;
         displayColor = Color.HSVToRGB (ratio / 2, 1.0f, 1.0f);
         health = script.value;

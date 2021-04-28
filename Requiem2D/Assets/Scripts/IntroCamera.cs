@@ -23,6 +23,7 @@ public class IntroCamera : MonoBehaviour {
             transform.position = new Vector3 (transform.position.x, Mathf.Sin (y * Mathf.Deg2Rad) * 0.4f - 0.75f, transform.position.z);
             y += 0.4f;
         }*/
+        //This makes camera fall into water and float up in introduction scene
         transform.position = new Vector3 (transform.position.x, transform.position.y - v, transform.position.z);
         if (transform.position.y > 1.66) {
             v += (0.0005f - x);

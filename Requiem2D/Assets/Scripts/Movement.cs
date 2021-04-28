@@ -31,6 +31,7 @@ public class Movement : MonoBehaviour {
     void Update () {
         var speed = GetComponent<Rigidbody2D> ().velocity.x;
         energy = script.value;
+        //Increases speed if there is energy and J key is held
         if ((Input.GetKey (KeyCode.J)) && (energy > 0)) {
             boosting = true;
             m_Speed = boostSpeed;
@@ -57,15 +58,8 @@ public class Movement : MonoBehaviour {
                 }
             }
         } else {
+            //Prevents going above water
             m_Rigidbody.gravityScale = 6.0f;
-            if (Input.GetKey (KeyCode.A)) {
-                //shark.flipX = true;
-                //transform.position -= new Vector3(m_Speed * Time.deltaTime, 0, 0);
-            }
-            if (Input.GetKey (KeyCode.D)) {
-                //shark.flipX = false;
-                //transform.position += new Vector3(m_Speed * Time.deltaTime, 0, 0);
-            }
         }
 
         if (Input.GetKey (KeyCode.W)) {
@@ -87,6 +81,7 @@ public class Movement : MonoBehaviour {
         }
 
         if (facingRight) {
+            //Sets maximum and minimum rotation
             if (transform.rotation.eulerAngles.z > 80 && transform.rotation.eulerAngles.z < 180) {
                 transform.rotation = Quaternion.Euler (0.0f, 0.0f, 80.0f);
             } else if (transform.rotation.eulerAngles.z > 180 && transform.rotation.eulerAngles.z < 260) {

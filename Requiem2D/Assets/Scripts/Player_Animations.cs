@@ -19,6 +19,7 @@ public class Player_Animations : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Delay for bite
         if (bite) {
             delay = 0.2f;
         }
@@ -27,8 +28,10 @@ public class Player_Animations : MonoBehaviour
             dead = true;
         }
         bite = Input.GetKeyDown(KeyCode.K) &&  (delay <= 0);
+        //Conditions for script variables
         bool speeding = Input.GetKey(KeyCode.J);
         bool swimming = ((Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.D)));
+        //Connects animator variables to script variables
         animator.SetBool("Biting", bite);
         animator.SetBool("Boosting", speeding);
         animator.SetBool("Swimming", swimming);
