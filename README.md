@@ -8,3 +8,8 @@ Possible updates in the future:
 -Mosasaur AI update
 -Character customization and upgrades
 -Complete Cretaceous Europe map
+
+AD keys to move fowards or backwards,
+WS keys to change direction
+J to boost
+K to bite
